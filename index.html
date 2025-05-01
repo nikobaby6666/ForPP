@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบทดสอบสุดน่ารัก</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            color: #ff66b2;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #fff0f5;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+        }
+        .question {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        button {
+            background-color: #ff99cc;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+        }
+        button:hover {
+            background-color: #ff66b2;
+        }
+        .correct { color: green; font-weight: bold; }
+        .incorrect { color: red; font-weight: bold; }
+        #score {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .answer {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>เพลงนี้ให้ฟ้า</h1>
+
+    <audio controls>
+        <source src="คนโปรด.mp3" type="audio/mp3">
+        ขอโทษค่ะ/ครับ, เบราว์เซอร์ของคุณไม่รองรับการเล่นเพลง.
+    </audio>
+
+    <div class="container">
+        <h2>แบบทดสอบความรู้ทั่วไปสุดน่ารักเขียนโดยเม่นเอง</h2>
+        <div class="question">
+            <p>1. คิดว่าเม่นเป็นคนแบบไหน?</p>
+            <button onclick="checkAnswer(1, 'เลว')">เลว</button>
+            <button onclick="checkAnswer(1, 'ระยำ')">ระยำ</button>
+            <button onclick="checkAnswer(1, 'น่ารัก')">น่ารัก</button>
+            <p id="result1"></p>
+            <p id="answer1" class="answer"></p>
+        </div>
+        
+        <div class="question">
+            <p>2. เม่นนิสัยดีมั้ย?</p>
+            <button onclick="checkAnswer(2, 'ไม่เลย')">ไม่เลย</button>
+            <button onclick="checkAnswer(2, 'ดีมากๆ')">ดีมากๆ</button>
+            <button onclick="checkAnswer(2, 'เหี้ยมาก')">เหี้ยมาก</button>
+            <p id="result2"></p>
+            <p id="answer2" class="answer"></p>
+        </div>
+        
+        <div class="question">
+            <p>3. ประทับใจเม่นรึเปล่า?</p>
+            <button onclick="checkAnswer(3, 'ไม่อะ')">ไม่อ่ะ</button>
+            <button onclick="checkAnswer(3, 'เกลียด')">เกลียด</button>
+            <button onclick="checkAnswer(3, 'ประทับใจ')">ประทับใจ</button>
+            <p id="result3"></p>
+            <p id="answer3" class="answer"></p>
+        </div>
+        
+        <div class="question">
+            <p>4.ตอนนี้คิดว่าเม่นคิดอะไรอยู่?</p>
+            <button onclick="checkAnswer(4, 'คิดมาก')">คิดมาก</button>
+            <button onclick="checkAnswer(4, 'คิดลึก')">คิดลึก</button>
+            <button onclick="checkAnswer(4, 'คิดถึงพี่แพรว')">คิดถึงพี่แพรว</button>
+            <p id="result4"></p>
+            <p id="answer4" class="answer"></p>
+        </div>
+
+        <div class="question">
+            <p>5.เม่นน่ารักไหม?</p>
+            <button onclick="checkAnswer(5, 'ไม่')">ไม่</button>
+            <button onclick="checkAnswer(5, 'น่ารักฝุดๆ')">น่ารักฝุดๆ</button>
+            <button onclick="checkAnswer(5, 'ไม่เท่าไหร่')">ไม่เท่าไหร่</button>
+            <p id="result5"></p>
+            <p id="answer5" class="answer"></p>
+        </div>
+        
+        <div class="question">
+            <p>6.อยากฟังเม่นเล่นกีตาร์อีกมั้ย?</p>
+            <button onclick="checkAnswer(6, 'อยากฟังมากก')">อยากฟังมากก</button>
+            <button onclick="checkAnswer(6, 'ไม่อยาก')">ไม่อยาก</button>
+            <button onclick="checkAnswer(6, 'ไปไกลๆ')">ไปไกลๆ</button>
+            <p id="result6"></p>
+            <p id="answer6" class="answer"></p>
+        </div>
+               
+        <div class="question">
+            <p>7. คิดว่าเม่นโกหกมั้ยที่บอกคิดถึง?</p>
+            <button onclick="checkAnswer(7, 'ไม่ได้โกหก')">ไม่ได้โกหก</button>
+            <button onclick="checkAnswer(7, 'โกหก')">โกหก</button>
+            <button onclick="checkAnswer(7, 'คนหลอกลวง')">คนหลอกลวง</button>
+            <p id="result7"></p>
+            <p id="answer7" class="answer"></p>
+        </div>
+        
+        <div class="question">
+            <p>8. คิดว่าเม่นจะทำพี่เสียใจมั้ย?</p>
+            <button onclick="checkAnswer(8, 'ไม่')">ไม่</button>
+            <button onclick="checkAnswer(8, 'ไม่เหลือ')">ไม่เหลือ</button>
+            <button onclick="checkAnswer(8, 'ชัวร์')">ชัวร์</button>
+            <p id="result8"></p>
+            <p id="answer8" class="answer"></p>
+        </div>
+        <p id="score"></p>
+    </div>
+    
+    <script>
+        let score = 0;
+        const correctAnswers = { 1: 'น่ารัก', 2: 'ดีมากๆ', 3: 'ประทับใจ', 4: 'คิดถึงพี่แพรว', 5: 'น่ารักฝุดๆ', 6: 'อยากฟังมากก', 7: 'ไม่ได้โกหก', 8: 'ไม่'
+    };
+        function checkAnswer(questionNumber, answer) {
+            const resultElement = document.getElementById('result' + questionNumber);
+            const answerElement = document.getElementById('answer' + questionNumber);
+            if (answer === correctAnswers[questionNumber]) {
+                resultElement.textContent = 'ถูกต้อง!';
+                resultElement.className = 'correct';
+                score++;
+            } else {
+                resultElement.textContent = 'ผิด!';
+                resultElement.className = 'incorrect';
+            }
+            answerElement.textContent = `คำตอบที่ถูกต้อง: ${correctAnswers[questionNumber]}`;
+            if (questionNumber === 8) {
+                document.getElementById('score').textContent = `เม่นให้คะเเนนพี่แพรว ${score} จาก 8 คะแนน`;
+            }
+        }
+    </script>
+     <audio autoplay loop>
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
+    <script>
+        function goBack() {
+            window.location.href = 'pots.html';
+        }
+    </script>
+    <button class="floating-back-btn" onclick="goBack()">cute moment</button>
+
+</body>
+</html>
